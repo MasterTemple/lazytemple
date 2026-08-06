@@ -1,11 +1,11 @@
 --  See `:help nvim-treesitter-intro`
 return {
   {
-    "https://github.com/nvim-treesitter/nvim-treesitter",
-    version = "main",
+    "nvim-treesitter/nvim-treesitter",
+    branch = "main",
     lazy = false,
     build = ":TSUpdate",
-    version = "4916d65",
+    -- version = "4916d65",
     opts = {
       ensure_installed = {
         "bash",

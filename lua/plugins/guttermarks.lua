@@ -1,7 +1,7 @@
 return {
   {
-    "https://github.com/dimtion/guttermarks.nvim",
-    version = "50088f9",
+    "dimtion/guttermarks.nvim",
+    -- version = "50088f9",
     event = "VeryLazy",
     opts = {
       special_mark = {

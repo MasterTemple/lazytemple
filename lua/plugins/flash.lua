@@ -1,7 +1,7 @@
 return {
   {
-    "https://github.com/folke/flash.nvim",
-    version = "fcea7ff",
+    "folke/flash.nvim",
+    -- version = "fcea7ff",
     opts = {
       labels = "asdfghjklqwertyuiopzxcvbnm1234890",
       label = {
@@ -29,7 +29,7 @@ return {
         function()
           require("flash").treesitter()
         end,
-        { desc = "Flash Treesitter", mode = { "n", "x", "o" } },
+        desc = "Flash Treesitter", mode = { "n", "x", "o" },
       },
     },
   },

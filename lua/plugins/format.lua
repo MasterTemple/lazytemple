@@ -1,7 +1,7 @@
 return {
   {
-    "https://github.com/stevearc/conform.nvim",
-    version = "18aeab3",
+    "stevearc/conform.nvim",
+    -- version = "18aeab3",
     opts = {
       notify_on_error = false,
       format_on_save = function(bufnr)
@@ -36,7 +36,7 @@ return {
         function()
           require("conform").format({ async = true })
         end,
-        { desc = "[L]SP [F]ormat [B]uffer", mode = { "n", "v" } },
+        desc = "[L]SP [F]ormat [B]uffer", mode = { "n", "v" },
       },
     },
   },

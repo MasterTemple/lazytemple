@@ -1,7 +1,7 @@
 return {
   {
     "dmtrKovalenko/fff.nvim",
-    version = "16b34f5",
+    -- version = "16b34f5",
     build = function()
       -- downloads a prebuilt binary or falls back to cargo build
       require("fff.download").download_or_build_binary()

@@ -3,9 +3,9 @@
 
 return {
   {
-    "https://github.com/nvim-neo-tree/neo-tree.nvim",
+    "nvim-neo-tree/neo-tree.nvim",
     -- version = vim.version.range("*"),
-    version = "8f858a7",
+    -- version = "8f858a7",
     opts = {
 
       ---@module 'neo-tree'
@@ -75,7 +75,7 @@ return {
             vim.cmd("wincmd =")
           end
         end,
-        { desc = "NeoTree Toggle Focus", silent = true },
+        desc = "NeoTree Toggle Focus", silent = true,
       },
       {
         "<leader>\\",
@@ -97,41 +97,32 @@ return {
             end
           end)
         end,
-        { desc = "NeoTree Toggle Window", silent = true },
+        desc = "NeoTree Toggle Window", silent = true,
       },
     },
   },
 
   {
-    "https://github.com/nvim-lua/plenary.nvim",
-    version = "74b06c6",
+    "nvim-lua/plenary.nvim",
+    -- version = "74b06c6",
   },
   {
-    "https://github.com/MunifTanjim/nui.nvim",
-    version = "de74099",
+    "MunifTanjim/nui.nvim",
+    -- version = "de74099",
   },
   {
-    "https://github.com/s1n7ax/nvim-window-picker",
-    version = "6382540",
+    "s1n7ax/nvim-window-picker",
+    -- version = "6382540",
     opts = {
       hint = "floating-big-letter",
     },
   },
   {
-    "https://github.com/nvim-tree/nvim-web-devicons",
-    version = "dfbfaa9",
-  },
-
-  -- alternative: https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-files.md
-  {
-    "https://github.com/stevearc/oil.nvim",
-    version = "0fcc838",
-    keys = {
-      { "<BS>", "<cmd>Oil<CR>", { desc = "Edit files of parent directory" } },
-    },
+    "nvim-tree/nvim-web-devicons",
+    -- version = "dfbfaa9",
   },
   {
-    "https://github.com/nvim-mini/mini.icons",
-    version = "520995f",
+    "nvim-mini/mini.icons",
+    -- version = "520995f",
   },
 }

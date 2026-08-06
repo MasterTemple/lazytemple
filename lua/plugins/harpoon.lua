@@ -1,8 +1,8 @@
 return {
   {
-    "https://github.com/ThePrimeagen/harpoon",
+    "ThePrimeagen/harpoon",
     branch = "harpoon2",
-    version = "87b1a35",
+    -- version = "87b1a35",
     enabled = false,
     keys = {
       {
@@ -10,14 +10,14 @@ return {
         function()
           harpoon:list():add()
         end,
-        { desc = "[H]ar[P]oon [A]dd" },
+        desc = "[H]ar[P]oon [A]dd",
       },
       {
         "<leader>hps",
         function()
           toggle_telescope(harpoon:list())
         end,
-        { desc = "[H]ar[P]oon [S]earch" },
+        desc = "[H]ar[P]oon [S]earch",
       },
     },
   },

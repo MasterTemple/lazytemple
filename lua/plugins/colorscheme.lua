@@ -1,7 +1,9 @@
 return {
   {
-    "https://github.com/folke/tokyonight.nvim",
-    version = "cdc07ac",
+    "folke/tokyonight.nvim",
+    -- version = "cdc07ac",
+    lazy = false,
+    priority = 1000,
     opts = {
       styles = {
         comments = { italic = false }, -- Disable italics in comments

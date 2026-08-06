@@ -6,8 +6,9 @@ return {
     --  - va)  - [V]isually select [A]round [)]paren
     --  - yinq - [Y]ank [I]nside [N]ext [Q]uote
     --  - ci'  - [C]hange [I]nside [']quote
-    "https://github.com/echasnovski/mini.nvim",
-    version = "264b5c8",
+    -- "https://github.com/echasnovski/mini.nvim",
+    "nvim-mini/mini.nvim",
+    -- version = "264b5c8",
     config = function()
       -- Better Around/Inside textobjects
       --

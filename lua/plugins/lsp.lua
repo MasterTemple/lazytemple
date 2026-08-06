@@ -3,35 +3,6 @@
 -- LSP keymaps, server configuration, Mason tools installations
 -- ============================================================
 
--- Diagnostic Config
--- See :help vim.diagnostic.Opts
-vim.diagnostic.config({
-  severity_sort = true,
-  float = { border = "rounded", source = "if_many" },
-  underline = { severity = vim.diagnostic.severity.ERROR },
-  signs = vim.g.have_nerd_font and {
-    text = {
-      [vim.diagnostic.severity.ERROR] = "󰅚 ",
-      [vim.diagnostic.severity.WARN] = "󰀪 ",
-      [vim.diagnostic.severity.INFO] = "󰋽 ",
-      [vim.diagnostic.severity.HINT] = "󰌶 ",
-    },
-  } or {},
-  virtual_text = {
-    source = "if_many",
-    spacing = 2,
-    format = function(diagnostic)
-      local diagnostic_message = {
-        [vim.diagnostic.severity.ERROR] = diagnostic.message,
-        [vim.diagnostic.severity.WARN] = diagnostic.message,
-        [vim.diagnostic.severity.INFO] = diagnostic.message,
-        [vim.diagnostic.severity.HINT] = diagnostic.message,
-      }
-      return diagnostic_message[diagnostic.severity]
-    end,
-  },
-})
-
 -- [[ LSP Configuration ]]
 -- Brief aside: **What is LSP?**
 --
@@ -61,12 +32,12 @@ vim.diagnostic.config({
 -- Useful status updates for LSP.
 return {
   {
-    "https://github.com/j-hui/fidget.nvim",
-    version = "889e2e9",
+    "j-hui/fidget.nvim",
+    -- version = "889e2e9",
   },
   {
     "https://github.com/neovim/nvim-lspconfig",
-    version = "deb0df6",
+    -- version = "deb0df6",
     config = function()
       --  This function gets run when an LSP attaches to a particular buffer.
       --    That is to say, every time a new file is opened that is associated with
@@ -122,9 +93,9 @@ return {
           --
           -- This may be unwanted, since they displace some of your code
           if client and client:supports_method("textDocument/inlayHint", event.buf) then
-            map("<leader>th", function()
+            map("<leader>lth", function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
-            end, "[T]oggle Inlay [H]ints")
+            end, "[L]SP [T]oggle Inlay [H]ints")
           end
         end,
       })
@@ -137,7 +108,7 @@ return {
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
-        -- rust_analyzer = {},
+        rust_analyzer = {},
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
@@ -211,20 +182,20 @@ return {
     end,
   },
   {
-    "https://github.com/mason-org/mason.nvim",
-    version = "cbf8d28",
+    "mason-org/mason.nvim",
+    -- version = "cbf8d28",
   },
   {
-    "https://github.com/mason-org/mason-lspconfig.nvim",
-    version = "7b01e29",
+    "mason-org/mason-lspconfig.nvim",
+    -- version = "7b01e29",
   },
   {
-    "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
-    version = "443f1ef",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    -- version = "443f1ef",
   },
   {
-    "https://github.com/nvimdev/lspsaga.nvim",
-    version = "3e33a6a",
+    "nvimdev/lspsaga.nvim",
+    -- version = "3e33a6a",
     config = function()
       require("lspsaga").setup({})
 
@@ -257,13 +228,13 @@ return {
   },
 
   -- TODO: Do I need this if I have LspSaga outline?
-  {
-    "https://github.com/simrat39/symbols-outline.nvim",
-    version = "564ee65",
-    opts = {
-      position = "right",
-      relative_width = false,
-      width = 48,
-    },
-  },
+  -- {
+  --   "simrat39/symbols-outline.nvim",
+  --   version = "564ee65",
+  --   opts = {
+  --     position = "right",
+  --     relative_width = false,
+  --     width = 48,
+  --   },
+  -- },
 }

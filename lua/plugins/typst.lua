@@ -1,7 +1,7 @@
 return {
   {
-    "https://github.com/chomosuke/typst-preview.nvim",
-    version = "87db18b",
+    "chomosuke/typst-preview.nvim",
+    -- version = "87db18b",
     ft = "typst",
     opts = function(_, opts)
       if vim.g.personal then

@@ -20,21 +20,51 @@ map("<S-l>", vim.cmd.bnext, "Next tab")
 
 map("<Esc>", vim.cmd.nohlsearch, "Clear search highlights")
 
--- Diagnostics quickfix
+--------------
+-- QuickFix --
+--------------
+
 -- map("<leader>q", vim.diagnostic.setloclist, "Open diagnostic [Q]uickfix list")
+
 map("<leader>qe", function()
 	vim.diagnostic.setqflist({
 		severity = vim.diagnostic.severity.ERROR,
 	})
-end, "[Q]uickfix [E]rrors")
+end, "[Q]uickFix: [E]rrors")
 
 map("<leader>qw", function()
 	vim.diagnostic.setqflist({
 		severity = vim.diagnostic.severity.WARN,
 	})
-end, "[Q]uickfix [W]arnings")
+end, "[Q]uickFix: [W]arnings")
 
--- Window navigation
+map('<leader>qr', function(opts)
+	vim.lsp.buf.references(nil, {
+		on_list = function(options)
+			vim.fn.setqflist({}, ' ', options)
+			-- TODO: Not sure what args are being passed here..
+			vim.cmd.copen(opts)
+			-- vim.cmd[[copen]]
+		end
+	})
+end, "[Q]uickFix: LSP [R]eferences")
+
+-- This will let me add references to multiple symbols if I want to iterate them together and fix them all at once
+map('<leader>qar', function(opts)
+	vim.lsp.buf.references(nil, {
+		on_list = function(options)
+			-- 'a' for append
+			vim.fn.setqflist({}, 'a', options)
+			-- TODO: Not sure what args are being passed here..
+			vim.cmd.copen(opts)
+			-- vim.cmd[[copen]]
+		end
+	})
+end, "[Q]uickFix: [A]dd LSP [R]eferences")
+
+-----------------------
+-- Window Navigation --
+-----------------------
 map("<C-h>", "<C-w><C-h>", "Move focus to the left window")
 map("<C-l>", "<C-w><C-l>", "Move focus to the right window")
 map("<C-j>", "<C-w><C-j>", "Move focus to the lower window")
@@ -86,3 +116,4 @@ map("<C-k>", "<C-w><C-k>", "Move focus to the upper window")
 -- 	"\"aciw<C-c>:let @a=substitute(@a, '\\l', '\\u\\0', '')|norm \"ap<CR>",
 -- 	"`camelCase` -> `PascalCase`"
 -- )
+

@@ -1,7 +1,7 @@
 return {
   {
-    "https://github.com/lewis6991/gitsigns.nvim",
-    version = "dd3f588",
+    "lewis6991/gitsigns.nvim",
+    -- version = "dd3f588",
     opts = {
       signs = {
         add = { text = "+" },
