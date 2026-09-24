@@ -39,6 +39,7 @@ return {
     "https://github.com/neovim/nvim-lspconfig",
     -- version = "deb0df6",
     config = function()
+      local root_pattern = require("lspconfig.util").root_pattern
       --  This function gets run when an LSP attaches to a particular buffer.
       --    That is to say, every time a new file is opened that is associated with
       --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
@@ -114,9 +115,13 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        -- Install: `sudo pacman -Syu typescript nodejs npm`
+        ts_ls = {},
 
         stylua = {}, -- Used to format Lua code
+        pyright = {},
+        ruff = {},
+        ty = {},
 
         -- Special Lua Config, as recommended by neovim help docs
         lua_ls = {
@@ -156,6 +161,60 @@ return {
             },
           },
         },
+        html = {},
+        emmet_language_server = {},
+        cssls = {},
+        taplo = {
+          filetypes = { "toml" },
+          -- Ensure it attaches even if you are not inside a git repository
+          root_dir = function(bufnr, on_dir)
+            local fname = vim.api.nvim_buf_get_name(bufnr)
+            on_dir(root_pattern("*.toml", ".git")(fname))
+          end,
+          settings = {
+            evenBetterToml = {
+              schema = {
+                repository = "https://tamasfe.dev",
+                enabled = true,
+              },
+            },
+          },
+        },
+        tailwindcss = {
+          filetypes = {
+            "html",
+            "css",
+            "rust",
+            "javascriptreact",
+            "typescriptreact",
+            "vue",
+            "svelte",
+          },
+          settings = {
+            tailwindCSS = {
+              userLanguages = {
+                rust = "html",
+              },
+              includeLanguages = {
+                rust = "html",
+              },
+              experimental = {
+                classRegex = {
+                  -- Simple pattern
+                  [[class: "(.*)"]],
+                  -- For multi-line patterns
+                  [[class\s*:\s*"([^"]*)"]],
+                  -- For variable assignments
+                  [[class\s*=\s*"([^"]*)"]],
+                  -- An attempt to allow for conditionals (`class: if bool { "my-tw-class" },`)
+                  [[class:[^"]*"(.*)"]],
+                },
+              },
+            },
+          },
+        },
+        oxlint = {},
+        tinymist = {},
       }
 
       -- Automatically install LSPs and related tools to stdpath for Neovim

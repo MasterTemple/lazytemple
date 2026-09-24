@@ -270,22 +270,43 @@ function M.run(pattern_str, user_opts)
   vim.notify(string.format('CodeActions: applied %d, skipped %d', applied, skipped), vim.log.levels.INFO)
 end
 
-vim.api.nvim_create_user_command('QfCodeActions', function(cmd_opts)
+-- Commands
+
+vim.api.nvim_create_user_command('QfListCodeActions', function(cmd_opts)
   M.run(cmd_opts.args)
 end, {
   nargs = '+',
   desc = 'Iterate the quickfix list, apply the first code action whose title matches a Vim regex, and save each file',
 })
 
+vim.api.nvim_create_user_command('QfWarningCodeActions', function(cmd_opts)
+  vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.WARN })
+  M.run(cmd_opts.args)
+end, {
+  nargs = '+',
+  desc = 'Iterate the warning diagnostics, apply the first code action whose title matches a Vim regex, and save each file',
+})
+
+vim.api.nvim_create_user_command('QfErrorCodeActions', function(cmd_opts)
+  vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.ERROR })
+  M.run(cmd_opts.args)
+end, {
+  nargs = '+',
+  desc = 'Iterate the error diagnostics, apply the first code action whose title matches a Vim regex, and save each file',
+})
+
+-- Keybinds
+
 vim.keymap.set("n", "<leader>qfa", "<cmd>QfCodeActions<CR>", {
 	desc = "[Q]uick[F]ix Code [A]ctions"
 })
 
+-- Shorthands
+
 vim.api.nvim_create_user_command('QfRemoveAllUnusedImports', function(cmd_opts)
-  vim.diagnostic.setqflist({})
+  vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.WARN })
   M.run("Remove all unused imports")
 end, {
-  -- nargs = '+',
   desc = 'Remove all unused imports across project (sets QFList)',
 })
 

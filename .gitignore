@@ -1,2 +1,3 @@
 work.lua
 nvim-pack-lock.json
+./lua/plugins/leetcode.lua
