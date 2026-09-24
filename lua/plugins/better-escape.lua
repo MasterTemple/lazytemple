@@ -6,11 +6,14 @@ return {
       mappings = {
         -- i for insert, other modes are the first letter too
         i = {
-          -- TODO: I don't think this works
-          J = {
-            k = "<Esc>",
+          k = {
+            j = "<Esc>",
           },
           j = {
+            k = "<Esc>",
+          },
+          -- TODO: I don't think this works
+          J = {
             k = "<Esc>",
           },
         },

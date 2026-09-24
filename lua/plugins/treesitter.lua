@@ -1,28 +1,41 @@
 --  See `:help nvim-treesitter-intro`
+vim.g.markdown_fenced_languages = {
+    "html",
+    "python",
+    "lua",
+    "vim",
+    "rust",
+    "typescript",
+    "javascript",
+    "bash=sh", -- Maps the ```bash fence to the standard 'sh' syntax
+}
 return {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    branch = "main",
-    lazy = false,
-    build = ":TSUpdate",
-    -- version = "4916d65",
-    opts = {
-      ensure_installed = {
-        "bash",
-        "c",
-        "diff",
-        "html",
-        "lua",
-        "luadoc",
-        "markdown",
-        "markdown_inline",
-        "query",
-        "rust",
-        "vim",
-        "vimdoc",
-      },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        branch = "main",
+        lazy = false,
+        build = ":TSUpdate",
+        -- version = "4916d65",
+        opts = {
+            ensure_installed = {
+                "bash",
+                "c",
+                "diff",
+                "html",
+                "lua",
+                "luadoc",
+                "markdown",
+                "markdown_inline",
+                "query",
+                "rust",
+                "vim",
+                "vimdoc",
+            },
+            highlight = {
+                enable = true, -- Enable tree-sitter highlighting
+            },
+        },
     },
-  },
 }
 
 -- TODO: Do I need this in lazy.vim?

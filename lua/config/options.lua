@@ -16,7 +16,7 @@ vim.o.showmode = false
 
 -- Sync clipboard between OS and Neovim (scheduled to avoid startup-time hit)
 vim.schedule(function()
-	vim.o.clipboard = "unnamedplus"
+  vim.o.clipboard = "unnamedplus"
 end)
 
 vim.o.breakindent = true
@@ -49,7 +49,7 @@ vim.o.confirm = true
 -- Indentation
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = false
+vim.opt.expandtab = true
 vim.opt.lazyredraw = true
 vim.opt.magic = true
 

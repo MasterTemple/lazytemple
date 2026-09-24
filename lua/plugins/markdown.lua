@@ -26,7 +26,7 @@ return {
             enable = false,
           },
           code_blocks = {
-            enable = false,
+            -- enable = false,
             pad_amount = 0,
           },
           headings = {
@@ -41,7 +41,7 @@ return {
           list_items = {
             enable = false,
             wrap = true,
-            shift_width = 1,
+            shift_width = 0,
             indent_size = 0,
             marker_minus = {
               add_padding = true,
@@ -147,6 +147,14 @@ return {
               title = true,
               preview = " PDF (Important)",
             },
+          },
+        },
+        markdown_inline = {
+          checkboxes = {
+            enable = false,
+          },
+          tags = {
+            enable = false,
           },
         },
         preview = {

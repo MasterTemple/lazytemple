@@ -10,6 +10,6 @@ return {
     init = function()
       vim.cmd("cnoreabbrev norm Norm")
     end,
-    lazy = false
-  }
+    lazy = false,
+  },
 }

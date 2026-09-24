@@ -1,6 +1,6 @@
 return {
   {
-    'stevearc/oil.nvim',
+    "stevearc/oil.nvim",
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {},
@@ -12,5 +12,5 @@ return {
     keys = {
       { "<BS>", "<cmd>Oil<CR>", desc = "Edit files of parent directory" },
     },
-  }
+  },
 }

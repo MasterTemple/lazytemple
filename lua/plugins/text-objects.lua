@@ -5,7 +5,7 @@ return {
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
-    config = true
+    config = true,
     -- use opts = {} for passing setup options
     -- this is equivalent to setup({}) function
     -- version = "7b9923a",

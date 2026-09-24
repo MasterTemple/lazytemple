@@ -103,11 +103,11 @@
 
 return {
   {
-    'saghen/blink.cmp',
+    "saghen/blink.cmp",
     dependencies = {
-      'saghen/blink.lib',
+      "saghen/blink.lib",
       -- optional: provides snippets for the snippet source
-      'rafamadriz/friendly-snippets',
+      "rafamadriz/friendly-snippets",
       -- {
       --   "folke/lazydev.nvim",
       --   version = "ff2cbcb",
@@ -116,7 +116,7 @@ return {
     build = function()
       -- build the fuzzy matcher, optionally add a timeout to `pwait(timeout_ms)`
       -- you can use `gb` in `:Lazy` to rebuild the plugin as needed
-      require('blink.cmp').build():pwait()
+      require("blink.cmp").build():pwait()
     end,
 
     ---@module 'blink.cmp'
@@ -135,9 +135,9 @@ return {
       --
       -- See :h blink-cmp-config-keymap for defining your own keymap
       keymap = {
-		preset = 'default',
-		["<tab>"] = { "accept", "fallback" }
-	  },
+        preset = "default",
+        ["<tab>"] = { "accept", "fallback" },
+      },
       appearance = {
         -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
         -- Adjusts spacing to ensure icons are aligned
@@ -155,15 +155,15 @@ return {
       -- (Default) list of enabled providers defined so that you can extend it
       -- elsewhere in your config, without redefining it, due to `opts_extend`
       sources = {
-	      default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' }, 
-			providers = {
-			  lazydev = {
-				name = "LazyDev",
-				module = "lazydev.integrations.blink",
-				-- make lazydev completions top priority (see `:h blink.cmp`)
-				score_offset = 100,
-			  },
-			},
+        default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+        providers = {
+          lazydev = {
+            name = "LazyDev",
+            module = "lazydev.integrations.blink",
+            -- make lazydev completions top priority (see `:h blink.cmp`)
+            score_offset = 100,
+          },
+        },
       },
 
       -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
@@ -173,5 +173,5 @@ return {
       snippets = { preset = "luasnip" },
       signature = { enabled = true },
     },
-  }
+  },
 }

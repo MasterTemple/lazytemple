@@ -75,7 +75,8 @@ return {
             vim.cmd("wincmd =")
           end
         end,
-        desc = "NeoTree Toggle Focus", silent = true,
+        desc = "NeoTree Toggle Focus",
+        silent = true,
       },
       {
         "<leader>\\",
@@ -97,7 +98,8 @@ return {
             end
           end)
         end,
-        desc = "NeoTree Toggle Window", silent = true,
+        desc = "NeoTree Toggle Window",
+        silent = true,
       },
     },
   },

@@ -2,7 +2,7 @@ return {
   {
     "MasterTemple/mkmv",
     -- version = "5a94c4b",
-	lazy = false,
+    lazy = false,
     opts = {
       rename_on_move = false,
       rename_include_extension = false,
