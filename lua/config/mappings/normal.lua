@@ -116,3 +116,37 @@ map("<C-k>", "<C-w><C-k>", "Move focus to the upper window")
 -- 	"\"aciw<C-c>:let @a=substitute(@a, '\\l', '\\u\\0', '')|norm \"ap<CR>",
 -- 	"`camelCase` -> `PascalCase`"
 -- )
+--
+
+------------------
+-- Multi-Cursor --
+------------------
+
+-- -- Add a cursor on the line directly below or above the main cursor
+-- vim.keymap.set({ "n", "i" }, "<C-A-j>", function()
+--     vim.mc.add_cursor("down")
+-- end, { desc = "Add cursor below" })
+--
+-- vim.keymap.set({ "n", "i" }, "<C-A-k>", function()
+--     vim.mc.add_cursor("up")
+-- end, { desc = "Add cursor above" })
+--
+-- -- Visual Mode: Add a cursor at the start of every selected line
+-- vim.keymap.set("v", "<C-A-i>", function()
+--     vim.mc.create_cursors_visual({ position = "start" })
+--     -- Return to normal mode with active cursors
+--     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
+-- end, { desc = "Add cursors to beginning of visually selected lines" })
+--
+-- -- Add a cursor at column 1 for every line in the whole buffer
+-- vim.keymap.set("n", "<C-A-%>", function()
+--     local line_count = vim.api.nvim_buf_line_count(0)
+--     for line = 1, line_count do
+--         vim.mc.add_cursor({ line = line, col = 1 })
+--     end
+-- end, { desc = "Add cursor to every line in file" })
+--
+-- -- Clear all secondary cursors and return to single cursor state
+-- vim.keymap.set({ "n", "i", "x" }, "<C-A-c>", function()
+--     vim.mc.clear_cursors()
+-- end, { desc = "Clear all multi-cursors" })

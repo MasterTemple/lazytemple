@@ -8,7 +8,9 @@ nvim -c 'ZipEdit "/home/dgmastertemple/Dropbox/Apps/remotely-save/MasterTemple/L
 --]]
 return {
     {
-        dir = "/home/dgmastertemple/Development/lua/zipedit.nvim/",
+        "MasterTemple/zipedit.nvim",
+        dir = vim.g.personal and "/home/dgmastertemple/Development/lua/zipedit.nvim/" or nil,
+        dev = vim.g.personal,
         name = "zipedit",
         cmd = "ZipEdit",
     },

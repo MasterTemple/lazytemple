@@ -2,8 +2,9 @@ return {
     ---@module 'lazy'
     ---@type LazySpec
     {
-        dir = "/home/dgmastertemple/Dropbox/Development/lua/multi-highlighter.nvim",
-        cond = vim.g.personal,
+        "MasterTemple/multi-highlighter.nvim",
+        dir = vim.g.personal and "/home/dgmastertemple/Dropbox/Development/lua/multi-highlighter.nvim" or nil,
+        dev = vim.g.personal,
         config = function()
             require("multi-highlighter").setup({
                 categories = {

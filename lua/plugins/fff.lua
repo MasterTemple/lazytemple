@@ -17,32 +17,58 @@ return {
         lazy = false, -- the plugin lazy-initialises itself
         keys = {
             {
-                "ff",
+                "<leader>ff",
                 function()
                     require("fff").find_files()
                 end,
                 desc = "FFFind files",
             },
             {
-                "fg",
+                "<leader>fg",
                 function()
                     require("fff").live_grep()
                 end,
                 desc = "LiFFFe grep",
             },
             {
-                "fz",
+                "<leader>fz",
                 function()
                     require("fff").live_grep({ grep = { modes = { "fuzzy", "plain" } } })
                 end,
                 desc = "Live fffuzy grep",
             },
             {
-                "fc",
+                "<leader>fc",
                 function()
                     require("fff").live_grep({ query = vim.fn.expand("<cword>") })
                 end,
                 desc = "Search current word",
+                mode = { "n" },
+            },
+            {
+                "<leader>fs",
+                function()
+                    local start = vim.fn.getpos("'<")
+                    local finish = vim.fn.getpos("'>")
+
+                    local lines = vim.api.nvim_buf_get_lines(0, start[2] - 1, finish[2], false)
+
+                    lines[1] = string.sub(lines[1], start[3])
+
+                    if #lines > 1 then
+                        lines[#lines] = string.sub(lines[#lines], 1, finish[3])
+                    else
+                        lines[1] = string.sub(lines[1], 1, finish[3] - start[3] + 1)
+                    end
+
+                    local selection = table.concat(lines, " ")
+
+                    require("fff").live_grep({
+                        query = selection,
+                    })
+                end,
+                desc = "Search current selection",
+                mode = { "v" },
             },
         },
     },

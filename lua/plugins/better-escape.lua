@@ -6,9 +6,9 @@ return {
             mappings = {
                 -- i for insert, other modes are the first letter too
                 i = {
-                    k = {
-                        j = "<Esc>",
-                    },
+                    -- k = {
+                    --     j = "<Esc>",
+                    -- },
                     j = {
                         k = "<Esc>",
                     },

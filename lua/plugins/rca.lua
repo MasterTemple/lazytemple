@@ -1,7 +1,8 @@
 return {
     {
-        -- dir = "/home/dgmastertemple/Dropbox/Development/lua/aca.nvim",
-        dir = "/home/dgmastertemple/Dropbox/Development/lua/rca.nvim",
+        "MasterTemple/rca.nvim",
+        dir = vim.g.personal and "/home/dgmastertemple/Dropbox/Development/lua/rca.nvim" or nil,
+        dev = vim.g.personal,
         -- commit = "91ff5ed",
         lazy = false,
         keys = {

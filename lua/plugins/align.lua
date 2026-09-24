@@ -1,7 +1,8 @@
 return {
     {
-        -- dir = "/home/dgmastertemple/Downloads/align-workspace-src/align-workspace/align.nvim/",
-        dir = "/home/dgmastertemple/Development/lua/align-workspace/align.nvim/",
+        enable = vim.g.personal,
+        dir = vim.g.personal and "/home/dgmastertemple/Development/lua/align-workspace/align.nvim/" or nil,
+        dev = vim.g.personal,
         lazy = false,
         keys = {
             { "<leader>a", "<cmd>Align<cr>", desc = "[A]lign Text", mode = { "n" } },

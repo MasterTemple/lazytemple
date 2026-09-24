@@ -3,8 +3,8 @@ local map = function(keys, func, desc)
 end
 
 map("jk", "<Esc>", "Enter normal mode")
-map("kj", "<Esc>", "Enter normal mode")
 map("Jk", "<Esc>", "Enter normal mode")
+-- map("kj", "<Esc>", "Enter normal mode")
 
 map("<C-h>", "<Left>", "Move h")
 map("<C-l>", "<Right>", "Move l")
