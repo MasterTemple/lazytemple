@@ -1,6 +1,6 @@
 return {
-  {
-    "tpope/vim-repeat",
-    -- version = "6584602",
-  },
+    {
+        "tpope/vim-repeat",
+        -- version = "6584602",
+    },
 }

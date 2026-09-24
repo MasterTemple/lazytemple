@@ -1,5 +1,5 @@
 local map = function(keys, func, desc)
-  vim.keymap.set("x", keys, func, { desc = desc, silent = true })
+    vim.keymap.set("x", keys, func, { desc = desc, silent = true })
 end
 
 map("<C-h>", "<C-w><C-h>", "Move focus to the left window")

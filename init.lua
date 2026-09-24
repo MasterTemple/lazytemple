@@ -28,12 +28,12 @@ require("config.scripts")
 
 -- I want to load this last
 if vim.g.personal then
-  require("config.personal")
+    require("config.personal")
 else
-  require("config.work")
+    require("config.work")
 end
 
-vim.cmd[[
+vim.cmd([[
 
 function! OpenZipFile(zip, path, line, col)
     " Construct the zipfile: URL
@@ -43,4 +43,4 @@ function! OpenZipFile(zip, path, line, col)
     " Jump to line and column
     execute 'call cursor(' . a:line . ', ' . a:col . ')'
 endfunction   
-]]
+]])

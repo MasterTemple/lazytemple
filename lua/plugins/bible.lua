@@ -1,6 +1,6 @@
 return {
-  -- https://lazy.folke.io/spec
-  -- {
-  --   enabled = vim.g.personal,
-  -- }
+    -- https://lazy.folke.io/spec
+    -- {
+    --   enabled = vim.g.personal,
+    -- }
 }

@@ -1,5 +1,5 @@
 local map = function(keys, func, desc)
-  vim.keymap.set("n", keys, func, { desc = desc, silent = true })
+    vim.keymap.set("n", keys, func, { desc = desc, silent = true })
 end
 
 ----------
@@ -27,39 +27,39 @@ map("<Esc>", vim.cmd.nohlsearch, "Clear search highlights")
 -- map("<leader>q", vim.diagnostic.setloclist, "Open diagnostic [Q]uickfix list")
 
 map("<leader>qe", function()
-  vim.diagnostic.setqflist({
-    severity = vim.diagnostic.severity.ERROR,
-  })
+    vim.diagnostic.setqflist({
+        severity = vim.diagnostic.severity.ERROR,
+    })
 end, "[Q]uickFix: [E]rrors")
 
 map("<leader>qw", function()
-  vim.diagnostic.setqflist({
-    severity = vim.diagnostic.severity.WARN,
-  })
+    vim.diagnostic.setqflist({
+        severity = vim.diagnostic.severity.WARN,
+    })
 end, "[Q]uickFix: [W]arnings")
 
 map("<leader>qr", function(opts)
-  vim.lsp.buf.references(nil, {
-    on_list = function(options)
-      vim.fn.setqflist({}, " ", options)
-      -- TODO: Not sure what args are being passed here..
-      vim.cmd.copen(opts)
-      -- vim.cmd[[copen]]
-    end,
-  })
+    vim.lsp.buf.references(nil, {
+        on_list = function(options)
+            vim.fn.setqflist({}, " ", options)
+            -- TODO: Not sure what args are being passed here..
+            vim.cmd.copen(opts)
+            -- vim.cmd[[copen]]
+        end,
+    })
 end, "[Q]uickFix: LSP [R]eferences")
 
 -- This will let me add references to multiple symbols if I want to iterate them together and fix them all at once
 map("<leader>qar", function(opts)
-  vim.lsp.buf.references(nil, {
-    on_list = function(options)
-      -- 'a' for append
-      vim.fn.setqflist({}, "a", options)
-      -- TODO: Not sure what args are being passed here..
-      vim.cmd.copen(opts)
-      -- vim.cmd[[copen]]
-    end,
-  })
+    vim.lsp.buf.references(nil, {
+        on_list = function(options)
+            -- 'a' for append
+            vim.fn.setqflist({}, "a", options)
+            -- TODO: Not sure what args are being passed here..
+            vim.cmd.copen(opts)
+            -- vim.cmd[[copen]]
+        end,
+    })
 end, "[Q]uickFix: [A]dd LSP [R]eferences")
 
 -----------------------

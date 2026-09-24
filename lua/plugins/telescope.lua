@@ -196,120 +196,120 @@
 -- return telescope_plugins
 
 return {
-  "nvim-telescope/telescope.nvim",
-  version = "*",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    -- optional but recommended
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    {
-      "nvim-telescope/telescope-ui-select.nvim",
-      -- version = "6e51d7d",
+    "nvim-telescope/telescope.nvim",
+    version = "*",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        -- optional but recommended
+        { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+        {
+            "nvim-telescope/telescope-ui-select.nvim",
+            -- version = "6e51d7d",
+        },
     },
-  },
-  opts = {
-    extensions = {
-      ["ui-select"] = { require("telescope.themes").get_dropdown() },
+    opts = {
+        extensions = {
+            ["ui-select"] = { require("telescope.themes").get_dropdown() },
+        },
     },
-  },
-  keys = {
-    -- LSP
-    { "gd", "<cmd>Telescope lsp_references<cr>", desc = "[G]oto [D]efinition (LSP)" },
-    { "gt", "<cmd>Telescope lsp_type_definitions<cr>", desc = "[G]oto [T]ype (LSP)" },
-    { "<leader>sr", "<cmd>Telescope lsp_references<cr>", desc = "[S]each [R]eferences (LSP)" },
+    keys = {
+        -- LSP
+        { "gd", "<cmd>Telescope lsp_references<cr>", desc = "[G]oto [D]efinition (LSP)" },
+        { "gt", "<cmd>Telescope lsp_type_definitions<cr>", desc = "[G]oto [T]ype (LSP)" },
+        { "<leader>sr", "<cmd>Telescope lsp_references<cr>", desc = "[S]each [R]eferences (LSP)" },
 
-    { "<leader>sdd", "<cmd>Telescope diagnostics<cr>", desc = "[S]earch [D]iagnostics (LSP)" },
-    {
-      "<leader>sde",
-      function()
-        require("telescope.builtin").diagnostics({
-          severity = vim.diagnostic.severity.ERROR,
-        })
-      end,
-      desc = "[S]earch [D]iagnostics [E]rrors",
-    },
-    {
-      "<leader>sdw",
-      function()
-        require("telescope.builtin").diagnostics({
-          severity = vim.diagnostic.severity.WARN,
-        })
-      end,
-      desc = "[S]earch [D]iagnostics [W]arnings",
-    },
+        { "<leader>sdd", "<cmd>Telescope diagnostics<cr>", desc = "[S]earch [D]iagnostics (LSP)" },
+        {
+            "<leader>sde",
+            function()
+                require("telescope.builtin").diagnostics({
+                    severity = vim.diagnostic.severity.ERROR,
+                })
+            end,
+            desc = "[S]earch [D]iagnostics [E]rrors",
+        },
+        {
+            "<leader>sdw",
+            function()
+                require("telescope.builtin").diagnostics({
+                    severity = vim.diagnostic.severity.WARN,
+                })
+            end,
+            desc = "[S]earch [D]iagnostics [W]arnings",
+        },
 
-    { "<leader>lim", "<cmd>Telescope lsp_implementations<cr>", desc = "[L]SP [Im]plementation" },
-    { "<leader>lfd", vim.diagnostic.open_float, desc = "[L]SP [F]loating [D]iagnostic" },
-    { "<leader>ldf", "<cmd>Telescope lsp_definitions<cr>", desc = "[L]SP [D]e[F]initions" },
-    { "<leader>ldt", "<cmd>Telescope lsp_type_definitions<cr>", desc = "[L]SP [D]efinition: [T]ype" },
-    { "<leader>lsd", "<cmd>Telescope lsp_document_symbols<cr>", desc = "[L]SP [S]ymbols: [D]ocument" },
-    { "<leader>lsw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "[L]SP [S]ymbols: [W]orkspace" },
-    -- Meta Searches
-    { "<leader>;", "<cmd>Telescope builtin<cr>", desc = "Open Telescope" },
-    { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "[S]earch [H]elp" },
-    { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "[S]earch [K]eymaps" },
-    { "<leader>sp", "<cmd>Telescope resume<cr>", desc = "[S]earch [P]revious" },
-    { "<leader>sc", "<cmd>Telescope commands<cr>", desc = "[S]earch [C]ommands" },
-    -- Locations
-    { "<leader>sm", "<cmd>Telescope marks<cr>", desc = "[S]earch [M]arks" },
-    { "<leader><tab>", "<cmd>Telescope buffers<cr>", desc = "[Tab] Find existing buffers" },
-    -- Files
-    { "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "[S]earch [F]iles" },
-    {
-      "<leader>sa",
-      function()
-        require("telescope.builtin").find_files({ follow = true, no_ignore = true, hidden = true })
-      end,
-      desc = "[S]earch [A]ll Files",
-    },
-    { "<leader>s.", "<cmd>Telescope oldfiles<cr>", desc = "[S]earch Recent Files ('.' for repeat)" },
-    -- { "<leader>sw", "<cmd>Telescope grep_string<cr>", desc = "[S]earch current [W]ord" },
+        { "<leader>lim", "<cmd>Telescope lsp_implementations<cr>", desc = "[L]SP [Im]plementation" },
+        { "<leader>lfd", vim.diagnostic.open_float, desc = "[L]SP [F]loating [D]iagnostic" },
+        { "<leader>ldf", "<cmd>Telescope lsp_definitions<cr>", desc = "[L]SP [D]e[F]initions" },
+        { "<leader>ldt", "<cmd>Telescope lsp_type_definitions<cr>", desc = "[L]SP [D]efinition: [T]ype" },
+        { "<leader>lsd", "<cmd>Telescope lsp_document_symbols<cr>", desc = "[L]SP [S]ymbols: [D]ocument" },
+        { "<leader>lsw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "[L]SP [S]ymbols: [W]orkspace" },
+        -- Meta Searches
+        { "<leader>;", "<cmd>Telescope builtin<cr>", desc = "Open Telescope" },
+        { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "[S]earch [H]elp" },
+        { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "[S]earch [K]eymaps" },
+        { "<leader>sp", "<cmd>Telescope resume<cr>", desc = "[S]earch [P]revious" },
+        { "<leader>sc", "<cmd>Telescope commands<cr>", desc = "[S]earch [C]ommands" },
+        -- Locations
+        { "<leader>sm", "<cmd>Telescope marks<cr>", desc = "[S]earch [M]arks" },
+        { "<leader><tab>", "<cmd>Telescope buffers<cr>", desc = "[Tab] Find existing buffers" },
+        -- Files
+        { "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "[S]earch [F]iles" },
+        {
+            "<leader>sa",
+            function()
+                require("telescope.builtin").find_files({ follow = true, no_ignore = true, hidden = true })
+            end,
+            desc = "[S]earch [A]ll Files",
+        },
+        { "<leader>s.", "<cmd>Telescope oldfiles<cr>", desc = "[S]earch Recent Files ('.' for repeat)" },
+        -- { "<leader>sw", "<cmd>Telescope grep_string<cr>", desc = "[S]earch current [W]ord" },
 
-    { "<leader>sg", "<cmd>Telescope live_grep<cr>", desc = "[S]earch by [G]rep" },
-    -- Current file
-    {
-      "<leader><leader>",
-      function()
-        require("telescope.builtin").current_buffer_fuzzy_find({
-          layout_config = {
-            width = 0.8,
-            height = 0.6,
-          },
-          previewer = false,
-        })
-      end,
-      desc = "Fuzzily search in current buffer",
-    },
-    -- Open Files
-    {
-      "<leader>se",
-      function()
-        require("telescope.builtin").live_grep({
-          grep_open_files = true,
-          prompt_title = "Live Grep in Open Files",
-        })
-      end,
-      desc = "[S]earch Open Files in [E]ditor",
-    },
+        { "<leader>sg", "<cmd>Telescope live_grep<cr>", desc = "[S]earch by [G]rep" },
+        -- Current file
+        {
+            "<leader><leader>",
+            function()
+                require("telescope.builtin").current_buffer_fuzzy_find({
+                    layout_config = {
+                        width = 0.8,
+                        height = 0.6,
+                    },
+                    previewer = false,
+                })
+            end,
+            desc = "Fuzzily search in current buffer",
+        },
+        -- Open Files
+        {
+            "<leader>se",
+            function()
+                require("telescope.builtin").live_grep({
+                    grep_open_files = true,
+                    prompt_title = "Live Grep in Open Files",
+                })
+            end,
+            desc = "[S]earch Open Files in [E]ditor",
+        },
 
-    -- Neovim config
-    {
-      "<leader>sn",
-      function()
-        require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })
-      end,
-      desc = "[S]earch [N]eovim files",
-    },
+        -- Neovim config
+        {
+            "<leader>sn",
+            function()
+                require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })
+            end,
+            desc = "[S]earch [N]eovim files",
+        },
 
-    -- Obsidian
-    {
-      "<leader>so",
-      function()
-        require("telescope.builtin").find_files({
-          cwd = "/home/dgmastertemple/Dropbox/Apps/remotely-save/MasterTemple/",
-        })
-      end,
-      desc = "[S]earch [O]bsidian files",
+        -- Obsidian
+        {
+            "<leader>so",
+            function()
+                require("telescope.builtin").find_files({
+                    cwd = "/home/dgmastertemple/Dropbox/Apps/remotely-save/MasterTemple/",
+                })
+            end,
+            desc = "[S]earch [O]bsidian files",
+        },
     },
-  },
 }
