@@ -12,6 +12,7 @@ return {
     },
     {
         "mrcjkb/rustaceanvim",
+        lazy = false,
         -- version = "6ba2ec9",
         keys = {
             { "<leader><BS>", "<cmd>RustLsp parentModule<CR>", desc = "Go to parent module" },

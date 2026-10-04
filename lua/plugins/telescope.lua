@@ -214,7 +214,7 @@ return {
     },
     keys = {
         -- LSP
-        { "gd", "<cmd>Telescope lsp_references<cr>", desc = "[G]oto [D]efinition (LSP)" },
+        -- { "gd", "<cmd>Telescope lsp_references<cr>", desc = "[G]oto [D]efinition (LSP)" },
         { "gt", "<cmd>Telescope lsp_type_definitions<cr>", desc = "[G]oto [T]ype (LSP)" },
         { "<leader>sr", "<cmd>Telescope lsp_references<cr>", desc = "[S]each [R]eferences (LSP)" },
 

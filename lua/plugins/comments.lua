@@ -25,11 +25,13 @@ return {
                 SAFE = { icon = "🦀", color = "safe", alt = { "SAFETY" } },
                 JUSTIFY = { icon = " ", color = "justify", alt = { "EXPLAIN" } },
                 FEAT = { icon = "", color = "feat", alt = { "IDEA" } },
-                IMPROVE = { icon = "", color = "improve" },
+                -- This has to do with the code quality or abstraction
+                IMPROVE = { icon = "", color = "improve", alt = { "CLEAN", "CLEANUP" } },
                 IDK = { icon = "?", color = "idk", alt = { "HELP", "QUESTION" } },
-                HIGH = { icon = "H", color = "high", alt = { "H", "HI" } },
-                MEDIUM = { icon = "M", color = "medium", alt = { "M", "MED" } },
-                LOW = { icon = "L", color = "low", alt = { "L", "LO" } },
+                -- NOTE: Single-letters will clutter search results with generics
+                HIGH = { icon = "H", color = "high", alt = { "HI" } },
+                MEDIUM = { icon = "M", color = "medium", alt = { "MED" } },
+                LOW = { icon = "L", color = "low", alt = { "LO" } },
             },
             colors = {
                 check = { "#67eb34" },

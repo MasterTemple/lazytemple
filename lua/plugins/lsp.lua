@@ -33,6 +33,8 @@
 return {
     {
         "j-hui/fidget.nvim",
+        opts = {},
+        lazy = false,
         -- version = "889e2e9",
     },
     {
@@ -58,7 +60,7 @@ return {
                     end
 
                     -- This is not Goto Definition, this is Goto Declaration.
-                    map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+                    map("gd", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
                     -- The following two autocommands are used to highlight references of the
                     -- word under your cursor when your cursor rests there for a little while.
@@ -110,7 +112,7 @@ return {
                 -- clangd = {},
                 -- gopls = {},
                 -- pyright = {},
-                rust_analyzer = {},
+                -- rust_analyzer = {},
                 --
                 -- Some languages (like typescript) have entire language plugins that can be useful:
                 --    https://github.com/pmizio/typescript-tools.nvim
