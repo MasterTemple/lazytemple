@@ -195,6 +195,23 @@
 
 -- return telescope_plugins
 
+local action_layout = require("telescope.actions.layout")
+
+-- 1. Create a custom function for your 5-line results layout
+local horizontal_custom_preview = function(prompt_bufnr)
+  local current_picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
+  
+  -- Force layout properties onto the active picker
+  current_picker.sorting_strategy = "ascending"
+  current_picker.layout_strategy = "horizontal"
+  current_picker.layout_config.horizontal = {
+    prompt_position = "top",
+    results_height = 5, -- Pins the results list height to exactly 5 lines
+  }
+  
+  current_picker:full_layout_update()
+end
+
 return {
     "nvim-telescope/telescope.nvim",
     version = "*",
@@ -211,6 +228,20 @@ return {
         extensions = {
             ["ui-select"] = { require("telescope.themes").get_dropdown() },
         },
+        -- mappings = {
+        --   i = {
+        --     -- Toggle between horizontal and vertical layouts
+        --     ["<C-l>"] = action_layout.cycle_layout, 
+        --     
+        --     -- Switch instantly to horizontal with input on top and 5 result rows
+        --     ["<C-h>"] = horizontal_custom_preview, 
+        --   },
+        --     n = {
+        --         -- Same mappings active in normal mode
+        --         ["<C-l>"] = action_layout.cycle_layout,
+        --         ["<C-h>"] = horizontal_custom_preview,
+        --     },
+        -- },
     },
     keys = {
         -- LSP
@@ -311,5 +342,13 @@ return {
             end,
             desc = "[S]earch [O]bsidian files",
         },
+        {
+            "<C-8>",
+            function()
+                require('telescope.actions.layout'):toggle_preview()
+            end,
+            desc = "Toggle Preview",
+            mode = { "i" },
+        }
     },
 }

@@ -29,6 +29,12 @@
 -- If you're wondering about lsp vs treesitter, you can check out the wonderfully
 -- and elegantly composed help section, `:help lsp-vs-treesitter`
 
+-- vim.lsp.config('topos', {
+--   cmd = { 'topos-lsp' },
+--   filetypes = { 'markdown', 'text' },
+-- })
+-- vim.lsp.enable('topos')
+
 -- Useful status updates for LSP.
 return {
     {
