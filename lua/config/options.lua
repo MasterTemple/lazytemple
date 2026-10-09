@@ -58,6 +58,9 @@ vim.opt.wrap = false
 
 vim.cmd.colorscheme("tokyonight-night")
 
+-- Rounded borders on floating windows that don't choose their own, like LSP hovers
+vim.o.winborder = "rounded"
+
 -- Diagnostic Config
 -- See :help vim.diagnostic.Opts
 vim.diagnostic.config({

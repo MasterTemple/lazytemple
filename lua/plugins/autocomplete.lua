@@ -146,7 +146,21 @@ return {
 
             -- (Default) Only show the documentation popup when manually triggered
             completion = {
-                documentation = { auto_show = true, auto_show_delay_ms = 200 },
+                menu = { border = "rounded" },
+                documentation = {
+                    auto_show = true,
+                    auto_show_delay_ms = 200,
+                    window = { border = "rounded" },
+                    -- Colors Bible passages (topos-bible.nvim); other items draw as usual
+                    draw = function(opts)
+                        local ok, topos = pcall(require, "topos")
+                        if ok and topos.blink_draw then
+                            topos.blink_draw(opts)
+                        else
+                            opts.default_implementation()
+                        end
+                    end,
+                },
                 trigger = {
                     show_on_backspace_in_keyword = true,
                 },
@@ -171,7 +185,7 @@ return {
             -- See the fuzzy documentation for more information
             fuzzy = { implementation = "rust" },
             snippets = { preset = "luasnip" },
-            signature = { enabled = true },
+            signature = { enabled = true, window = { border = "rounded" } },
         },
     },
 }

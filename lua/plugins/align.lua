@@ -12,7 +12,7 @@ return {
     -- },
     {
         "MasterTemple/align",
-        dir = vim.g.personal and "/home/dgmastertemple/Development/lua/align-workspace" or nil,
+        dir = vim.g.personal and "/home/dgmastertemple/Development/rust/align" or nil,
         dev = vim.g.personal,
         -- optional: dependencies = { "nvim-telescope/telescope.nvim" },
         keys = {
