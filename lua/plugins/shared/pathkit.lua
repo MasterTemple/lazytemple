@@ -1,8 +1,7 @@
 return {
     {
         "MasterTemple/pathkit.nvim",
-        dir = vim.g.personal and "/home/dgmastertemple/Development/lua/pathkit.nvim/" or nil,
-        dev = vim.g.personal,
+        dev = true,
         -- version = "5a94c4b",
         lazy = false,
         dependencies = { "nvim-telescope/telescope.nvim" },  -- optional

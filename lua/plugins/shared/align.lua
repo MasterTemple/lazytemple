@@ -12,8 +12,7 @@ return {
     -- },
     {
         "MasterTemple/align",
-        dir = vim.g.personal and "/home/dgmastertemple/Development/rust/align" or nil,
-        dev = vim.g.personal,
+        dev = true,
         -- optional: dependencies = { "nvim-telescope/telescope.nvim" },
         keys = {
             { "<leader>a", ":Align<CR>", mode = { "n", "x" }, desc = "Align" },

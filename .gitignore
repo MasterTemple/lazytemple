@@ -1,3 +1,6 @@
 work.lua
 nvim-pack-lock.json
 ./lua/plugins/leetcode.lua
+# Work-only plugin specs stay on the work machine; init.lua is kept so the import never comes up empty
+lua/plugins/work/*
+!lua/plugins/work/init.lua

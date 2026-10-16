@@ -1,7 +1,6 @@
 return {
     {
         "LetsChurch/usfm.vim",
-        enabled = vim.g.personal,
     },
     -- {
     --     "MasterTemple/topos-bible",
@@ -36,12 +35,9 @@ return {
     --     },
     -- },
     {
-        -- "MasterTemple/topos-bible",
-        enabled = vim.g.personal,
-        -- "MasterTemple/logoxide.nvim",
+        "Logoxide/logoxide.nvim",
         main = "logoxide",
-        dir = vim.g.personal and "/home/dgmastertemple/Development/nvim-plugins/logoxide.nvim/" or nil,
-        dev = vim.g.personal,
+        dev = true,
         -- Builds logoxide-lsp, lx, and topos with Cargo (needs Rust: https://rustup.rs)
         build = ":LxBuild!",
         dependencies = { "nvim-telescope/telescope.nvim" }, -- optional

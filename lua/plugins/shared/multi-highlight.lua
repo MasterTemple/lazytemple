@@ -3,8 +3,7 @@ return {
     ---@type LazySpec
     {
         "MasterTemple/multi-highlighter.nvim",
-        dir = vim.g.personal and "/home/dgmastertemple/Dropbox/Development/lua/multi-highlighter.nvim" or nil,
-        dev = vim.g.personal,
+        dev = true,
         config = function()
             require("multi-highlighter").setup({
                 categories = {

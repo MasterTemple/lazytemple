@@ -1,8 +1,7 @@
 return {
     {
         "MasterTemple/mkmv",
-        dir = vim.g.personal and "/home/dgmastertemple/Development/lua/mkmv/" or nil,
-        dev = vim.g.personal,
+        dev = true,
         -- version = "5a94c4b",
         lazy = false,
         opts = {

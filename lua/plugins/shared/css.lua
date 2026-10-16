@@ -2,8 +2,7 @@ return {
     {
         -- LSP for project CSS classes (complements tailwindcss)
         "MasterTemple/css-class-lsp",
-        dir = vim.g.personal and "/home/dgmastertemple/Development/rust/css-class-lsp/" or nil,
-        dev = vim.g.personal,
+        dev = true,
         main = "css-class-lsp",
         build = "cargo build --release",
         lazy = false,
