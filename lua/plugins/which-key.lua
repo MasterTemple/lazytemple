@@ -45,6 +45,11 @@ return {
                 { "<leader>qa", group = "[Q]uickFix [A]dd" },
                 { "<leader>h", group = "Git [H]unk", mode = { "n", "v" } }, -- Enable gitsigns recommended keymaps first
                 { "gr", group = "LSP Actions", mode = { "n" } },
+
+
+                { "<leader>lx", group = "[L]ogo[X]ide" },
+                { "<leader>lxs", group = "[L]ogo[X]ide [S]earch" },
+                { "<leader>lxr", group = "[L]ogo[X]ide [R]ead" },
             },
         },
     },

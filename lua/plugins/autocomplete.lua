@@ -151,11 +151,11 @@ return {
                     auto_show = true,
                     auto_show_delay_ms = 200,
                     window = { border = "rounded" },
-                    -- Colors Bible passages (topos-bible.nvim); other items draw as usual
+                    -- Colors Bible passages (logoxide.nvim); other items draw as usual
                     draw = function(opts)
-                        local ok, topos = pcall(require, "topos")
-                        if ok and topos.blink_draw then
-                            topos.blink_draw(opts)
+                        local ok, logoxide = pcall(require, "logoxide")
+                        if ok and logoxide.blink_draw then
+                            logoxide.blink_draw(opts)
                         else
                             opts.default_implementation()
                         end

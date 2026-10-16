@@ -1,5 +1,8 @@
 return {
     {
+        "dlyongemallo/diffview-plus.nvim",
+    },
+    {
         "lewis6991/gitsigns.nvim",
         -- version = "dd3f588",
         opts = {
