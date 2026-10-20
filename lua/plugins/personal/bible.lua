@@ -2,42 +2,11 @@ return {
     {
         "LetsChurch/usfm.vim",
     },
-    -- {
-    --     "MasterTemple/topos-bible",
-    --     enabled = vim.g.personal,
-    --     name = "topos-bible.nvim",
-    --     dir = vim.g.personal and "/home/dgmastertemple/github/topos" or nil,
-    --     -- dir = vim.g.personal and "/home/dgmastertemple/Development/nvim-plugins/topos-bible.nvim/" or nil,
-    --     dev = vim.g.personal,
-    --     main = "topos",
-    --     build = "cargo build --release -p topos-lsp -p topos-bible-cli",
-    --     dependencies = { "nvim-telescope/telescope.nvim" }, -- optional
-    --     ft = { "markdown", "text" },
-    --     cmd = {
-    --         "ToposSearch",
-    --         "ToposQuery",
-    --         "ToposExplicitOverlap",
-    --         "ToposAnyOverlap",
-    --         "ToposExactOverlap",
-    --         "ToposInside",
-    --         "ToposExcludeOverlap",
-    --         "ToposBuild",
-    --         "ToposLspStart",
-    --     },
-    --     opts = {
-    --         settings = {
-    --             format = "name", -- Jn 3:16
-    --             ["psg-fmt"] = { join_adjacent = true }, -- 3:16-18, not 3:16,17,18
-    --             ["reference-diagnostics"] = "info", -- 'info' (default), 'hint', or 'never'
-    --             ["inlay-hints"] = "never", -- 'changed' (default), 'always', 'osis', 'never'
-    --             ext = "md,txt",
-    --         },
-    --     },
-    -- },
     {
-        "Logoxide/logoxide.nvim",
+        -- "Logoxide/logoxide.nvim",
         main = "logoxide",
-        dev = true,
+        dir = "/home/dgmastertemple/Dropbox/Development/nvim-plugins/logoxide.nvim",
+        -- dev = true,
         -- Builds logoxide-lsp, lx, and topos with Cargo (needs Rust: https://rustup.rs)
         build = ":LxBuild!",
         dependencies = { "nvim-telescope/telescope.nvim" }, -- optional
@@ -93,22 +62,14 @@ return {
             },
             -- A folder of USX files, one book each (JHN.usx): hover shows the text, and go to
             -- definition opens the whole book
-            -- bible = "~/Bibles/BSB",
-            -- bible = "/home/dgmastertemple/Dropbox/Apps/remotely-save/MasterTemple/USX_1",
-            -- bible = "/home/dgmastertemple/Documents/esv-usx/data/usx/esv/",
-            -- bible = "/home/dgmastertemple/Development/rust/html-to-usx/data/usx/esv/",
             bibles = {
-                -- ESV = "/home/dgmastertemple/Development/rust/html-to-usx/data/usx/esv/",
-                -- LSB = "/home/dgmastertemple/Development/rust/html-to-usx/data/usx/lsb/",
-                -- NKJV = "/home/dgmastertemple/Development/rust/html-to-usx/data/usx/nkjv/",
-                -- BSB = "/home/dgmastertemple/Downloads/bsb-usx/text-317e03834065a236-307906/release/USX_1/",
-
-                ESV = "/home/dgmastertemple/Documents/local-usx/esv/",
-                LSB = "/home/dgmastertemple/Documents/local-usx/lsb/",
-                NKJV = "/home/dgmastertemple/Documents/local-usx/nkjv/",
-                BSB = "/home/dgmastertemple/Documents/local-usx/bsb/",
-                AMP = "/home/dgmastertemple/Documents/local-usx/amp/",
-                NASB1995 = "/home/dgmastertemple/Documents/local-usx/nasb1995/",
+                -- NOTE: The default settings are applied if I have no Bibles
+                ESV = "/home/dgmastertemple/Documents/local-usx/ESV/",
+                LSB = "/home/dgmastertemple/Documents/local-usx/LSB/",
+                NKJV = "/home/dgmastertemple/Documents/local-usx/NKJV/",
+                BSB = "/home/dgmastertemple/Documents/local-usx/BSB/",
+                AMP = "/home/dgmastertemple/Documents/local-usx/AMP/",
+                NASB1995 = "/home/dgmastertemple/Documents/local-usx/NASB1995/",
             },
             default_bible = "ESV",
             markup = {
@@ -120,18 +81,6 @@ return {
                 notes = { show = false, color = nil },
                 width = 80,
             },
-            -- insertions = {
-            --     {
-            --         name = "Callout",
-            --         display = "> [!bible] {reference} {bible}\n{text}",
-            --         line_prefix = "> ",
-            --         replace = "line",
-            --         markup = {
-            --             headings = { show = false },
-            --             verse_numbers = { display = "<sup>{verse}</sup>" },
-            --         },
-            --     },
-            -- },
             templates = {
                 callout = {
                     display = "> [!bible] {reference} {bible}\n{text}",
@@ -143,7 +92,7 @@ return {
                     },
                 },
                 -- the inline hint: the first verse, without its heading
-                ["virtual-text-verse"] = {
+                diagnostic = {
                     display = "{first:1}",
                     markup = { headings = { show = false } },
                 },
@@ -171,7 +120,7 @@ return {
                 format = "name", -- or 'abbreviation' for Jn 3:16
                 ["psg-fmt"] = { join_adjacent = true }, -- 3:16-18, not 3:16,17,18
                 ["reference-diagnostics"] = "hint", -- 'info' (default), 'hint', or 'never'
-                ["reference-diagnostics-template"] = "virtual-text-verse", -- their text
+                ["reference-diagnostics-template"] = "diagnostic", -- their text
                 ["inlay-hints"] = "never", -- 'changed' (default), 'always', 'osis', 'never'
                 ext = "md,txt,typ", -- what references and searches cover
                 --   hover = { 'osis', 'book', 'genres', 'verses' } }
