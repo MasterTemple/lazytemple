@@ -265,13 +265,14 @@ return {
         "nvimdev/lspsaga.nvim",
         -- version = "3e33a6a",
         config = function()
-            require("lspsaga").setup({})
+            require("lspsaga").setup({
+                -- Breadcrumbs come from dropbar.nvim (shared/dropbar.lua)
+                symbol_in_winbar = { enable = false },
+            })
 
             vim.api.nvim_create_autocmd("LspAttach", {
                 group = vim.api.nvim_create_augroup("lspsaga-lsp-attach", { clear = true }),
                 callback = function(event)
-                    require("lspsaga").setup({})
-
                     local map = function(keys, func, desc, mode)
                         mode = mode or "n"
                         vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = desc })

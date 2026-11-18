@@ -6,6 +6,7 @@
   "blink.lib": { "branch": "main", "commit": "fd9a48ebbe6ec30d5dfcc5b42c243941ccdca1aa" },
   "conform.nvim": { "branch": "master", "commit": "016802de402556da54c36bd7359b441266b01cdd" },
   "diffview-plus.nvim": { "branch": "main", "commit": "5ec4af8064924259f72c27f7d1e051a5bd643edf" },
+  "dropbar.nvim": { "branch": "master", "commit": "75df03973f3a06a85300bc8ca1f9f68e935cb78e" },
   "ferris.nvim": { "branch": "main", "commit": "275865530d753a205740804f1ce163af2322db57" },
   "fff.nvim": { "branch": "main", "commit": "e3f694a2e4f82bb755418e8d305dcff779c59c27" },
   "fidget.nvim": { "branch": "main", "commit": "9e0201673e08e997e7cf52afca5565c70bd117f3" },
