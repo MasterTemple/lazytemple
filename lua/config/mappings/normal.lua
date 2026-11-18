@@ -15,8 +15,7 @@ map("<M-j>", ":m .+1<CR>", "Move down")
 map("<M-p>", vim.cmd.cprev, "Quick switcher (prev)")
 map("<M-n>", vim.cmd.cnext, "Quick switcher (next)")
 
-map("<S-h>", vim.cmd.bprev, "Previous tab")
-map("<S-l>", vim.cmd.bnext, "Next tab")
+-- <S-h>/<S-l> (tab left/right) live in plugins/shared/bufferline.lua
 
 map("<Esc>", vim.cmd.nohlsearch, "Clear search highlights")
 
