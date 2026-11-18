@@ -36,6 +36,7 @@ return {
             "LxFileReferences",
             "LxReadAt",
             "LxSwitch",
+            "LxGrep",
         },
         keys = {
             { "[b", "<cmd>LxPrevBook<cr>" },
@@ -51,6 +52,7 @@ return {
             { "<leader>lxsd", "<cmd>LxDirReferences<cr>", desc = "[L]ogo[X]ide [S]earch [D]irectory" },
             { "<leader>lxsf", "<cmd>LxFileReferences<cr>", desc = "[L]ogo[X]ide [S]earch [F]ile" },
             { "<leader>lxst", "<cmd>LxSwitch<cr>", desc = "[L]ogo[X]ide [S]earch [T]ranslation" },
+            { "<leader>lxsb", "<cmd>LxGrep<cr>", desc = "[L]ogo[X]ide [S]earch [B]ible" },
             { "<leader>lxrb", "<cmd>LxRead<cr>", desc = "[L]ogo[X]ide [R]ead [B]ook" },
             { "<leader>lxrv", "<cmd>LxReadAt<cr>", desc = "[L]ogo[X]ide [R]ead [V]erse" },
         },
@@ -131,7 +133,8 @@ return {
             cache = true,
             -- Searches and go-to-references cover the workspace's EPUBs too; with epub.nvim, their
             -- references open in its rendered chapters
-            epub = true,
+            -- This jumps me to the end of the file (at least for my results in Mt 1:1)
+            -- epub = true,
         },
     },
 }
