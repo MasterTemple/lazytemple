@@ -272,6 +272,7 @@ return {
         { "<leader>lim", "<cmd>Telescope lsp_implementations<cr>", desc = "[L]SP [Im]plementation" },
         { "<leader>lfd", vim.diagnostic.open_float, desc = "[L]SP [F]loating [D]iagnostic" },
         { "<leader>ldf", "<cmd>Telescope lsp_definitions<cr>", desc = "[L]SP [D]e[F]initions" },
+        { "<leader>ldc", vim.lsp.buf.declaration, desc = "[L]SP [D]e[C]laration" },
         { "<leader>ldt", "<cmd>Telescope lsp_type_definitions<cr>", desc = "[L]SP [D]efinition: [T]ype" },
         { "<leader>lsd", "<cmd>Telescope lsp_document_symbols<cr>", desc = "[L]SP [S]ymbols: [D]ocument" },
         { "<leader>lsw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "[L]SP [S]ymbols: [W]orkspace" },

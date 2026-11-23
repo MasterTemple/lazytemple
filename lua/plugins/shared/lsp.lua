@@ -66,7 +66,8 @@ return {
                     end
 
                     -- This is not Goto Definition, this is Goto Declaration.
-                    map("gd", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+                    -- map("gd", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+                    map("gd", "<cmd>Telescope lsp_definitions<cr>", "[G]oto [D]efinition")
 
                     -- The following two autocommands are used to highlight references of the
                     -- word under your cursor when your cursor rests there for a little while.

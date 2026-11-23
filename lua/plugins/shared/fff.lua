@@ -70,6 +70,15 @@ return {
                 desc = "Search current selection",
                 mode = { "v" },
             },
+            {
+                "<leader>fr",
+                function()
+                    if not require("fff").resume() then
+                        vim.notify("fff: nothing to resume", vim.log.levels.INFO)
+                    end
+                end,
+                desc = "Resume last fff search",
+            },
         },
     },
 }
